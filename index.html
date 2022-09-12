@@ -1,0 +1,138 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>TOP 5 Best Fiends</title>
+    <style>
+body{
+    width: 100%;
+    background-image: url(https://pict.sindonews.net/dyn/850/pena/news/2022/06/13/15/797029/gunung-semeru-alami-19-kali-gempa-erupsi-pvmbg-imbau-masyarakat-waspada-oxk.jpg);
+    font-family: sans-serif;
+}
+.judul{
+    text-align: center;
+    color: black;
+}
+.tabell{
+    display: block;
+    margin : auto;
+    border-collapse: collapse;
+    width: 30%;
+}
+th,
+td{
+    border: 2px solid black;
+    text-align:center ;
+    padding: 15px;
+}
+tr:nth-child(even) {
+    background-color: orange;
+}
+th:hover{
+    background-color:blue;
+}
+td:hover{
+    background-color: dimgrey;
+}
+.tabel-utama{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+.nama_mhs {
+    cursor: pointer;
+}
+.nama_mhs:hover{
+    background-color: whitesmoke;
+}
+.hapus {
+    cursor: pointer;
+}
+.Kembali-tablejquery {
+    margin-left: 20px;
+    background-color: aliceblue;
+    width: 70px;
+    border-radius: 20%;
+    text-align: center;
+}
+a{
+    text-align: center;
+    color: gray;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+<h1 class="judul"> TOP 5 Best Friends </h1>
+<table class="tabell">
+	<tbody>
+	<tr class="tabel-utama">
+		<th>NO</th>
+		<th>NAMA</th>
+		<th>ALAMAT</th>
+		<th colspan="2">AKSI</th>
+	</tr>
+	<tr id="row__1">
+		<td>1</td>
+		<td class="nama_mhs">Widisa Adi Koemara</td>
+		<td>Cirebon</td>
+		<td class="ubah">Edit</td>
+		<td class="hapus" id="hapus__1">Hapus</td>
+	</tr>
+	<tr id="row__2">
+		<td>2</td>
+		<td class="nama_mhs">Umar Rakhman</td>
+		<td>Cirebon</td>
+		<td class="ubah">Edit</td>
+		<td class="hapus" id="hapus__2">Hapus</td>
+	</tr>
+	<tr id="row__3">
+		<td>3</td>
+		<td class="nama_mhs">Sigit Saputra</td>
+		<td>Cirebon</td>
+		<td class="ubah">Edit</td>
+		<td class="hapus" id="hapus__3">Hapus</td>
+	</tr>
+	<tr id="row__4">
+		<td>4</td>
+		<td class="nama_mhs">Syaeful Annas</td>
+		<td>Cirebon</td>
+		<td class="ubah">Edit</td>
+		<td class="hapus" id="hapus__4">Hapus</td>
+	</tr>
+	<tr id="row__5">
+		<td>5</td>
+		<td class="nama_mhs">Ibnu Salman Syam</td>
+		<td>Cirebon</td>
+		<td class="ubah">Edit</td>
+		<td class="hapus" id="hapus__5">Hapus</td>
+	</tr>
+	</tbody>
+</table>
+
+<div class="Kembali-tablejquery">
+	<p>
+		<a onclick="alert('Apakah Anda ingin kembali ke halaman pertama?')" href="../index.html">Kembali</a>
+	</p>
+</div>
+<script>
+    $('.nama_mhs').click(function(){
+           let isi = $(this).text();
+           let isi2 = prompt ('ubah dengan:', isi);
+           if (!isi2) return;
+           $(this).text(isi2);
+        })
+        $('.hapus').click(function(){
+            let yakin = confirm('yakin mau menghapus?');
+            let id = $(this).prop('id');
+            let rid = id.split('__');
+            let baris_ke = rid[1];
+            $('#row__' + baris_ke).slideUp()
+        })
+</script>
+</body>
+</html>
